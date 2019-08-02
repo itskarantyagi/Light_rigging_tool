@@ -3,7 +3,7 @@
 This is a lighting tool to create a light setup. User enters the details through a UI which is based on PyQt.
 
 
-The tool provide 3 tpes of lighting rigs:
+The tool provide 3 types of lighting rigs:
 - 3 Point Lighting
 - Fake GI
 - IBL
