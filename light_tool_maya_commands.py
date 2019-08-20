@@ -4,7 +4,11 @@ import final_light_setup
 
 reload(final_light_setup)
 from final_light_setup import Final_tool
-from qtswitch.qt4.QtGui import *
+
+from PySide2.QtWidgets import (QApplication, QComboBox, QDialog,
+QDialogButtonBox, QFormLayout, QGridLayout, QGroupBox, QHBoxLayout,
+QLabel, QLineEdit, QMenu, QMenuBar, QPushButton, QSpinBox, QTextEdit,
+QVBoxLayout, QRadioButton)
 
 
 class Light_tool_maya_commands(Final_tool):
@@ -22,16 +26,13 @@ class Light_tool_maya_commands(Final_tool):
     def update_characters(self):
 
         if (self.choice1 == 'Character'):
-            # shapes = cmds.ls(type='mesh')
-            # transform_node = cmds.listRelatives(shapes, parent=True)
-            # for i in transform_node:
-            #     print(">>>")
+            
             self.optional_widget_combo.addItems(cmds.ls("*global_ctrl"))
 
     def fetch(self):
         print("entering fetch")
         rig_choice = self.top2.currentText()
-        # if rig_choice == '3 Point':
+        
 
         if rig_choice == "3 Point":
             print("Entering 3 Point")
@@ -91,7 +92,7 @@ class Light_tool_maya_commands(Final_tool):
             count_data = {}
 
             for c, i in enumerate(range(3, 21)):
-                print i * (i - 1) + 2
+                print(i * (i - 1) + 2)
                 count_data[i * (i - 1) + 2] = i
 
             try:
@@ -208,7 +209,7 @@ class Light_tool_maya_commands(Final_tool):
         for k, v in self.user_dict.items():
             print(k, v)
             for ik, iv in v.items():
-                print (ik, iv)
+                print(ik, iv)
 
     def character_light_setup(self):
         choice = self.Combo.currentText()
@@ -255,7 +256,7 @@ class Light_tool_maya_commands(Final_tool):
 
 if __name__ == "__main__":
     app = QApplication([])
-    mw = QMainWindow()
+    # mw = QMainWindow()
     wdg = Light_tool_maya_commands()
     wdg.show()
     sys.exit(app.exec_())
