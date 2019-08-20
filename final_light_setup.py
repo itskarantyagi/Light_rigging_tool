@@ -1,6 +1,12 @@
 import sys
-from qtswitch.qt4.QtGui import *
-from qtswitch.qt4.QtCore import *
+
+from PySide2.QtWidgets import (QApplication,QWidget, QComboBox, QDialog, QDialogButtonBox, QFormLayout, QGridLayout, QGroupBox, QHBoxLayout,
+                   QLabel, QLineEdit, QMenu, QMenuBar, QPushButton, QSpinBox, QTextEdit, QVBoxLayout, QRadioButton)
+
+
+from PySide2.QtGui import *
+from PySide2.QtCore import *
+
 
 
 class Final_tool(QWidget):
@@ -55,7 +61,7 @@ class Final_tool(QWidget):
         self.label_shadow_option = None
 
     def get_characters(self):
-        print ('getting characters in UI')
+        print('getting characters in UI')
         pass
 
     def get_data(self):
@@ -117,7 +123,7 @@ class Final_tool(QWidget):
             self.delete_lab_text(
                 objects=[[self.optional_widget_layout, self.optional_widget_combo, self.optional_widget_label]])
 
-            print "doing for area light"
+            print("doing for area light")
         else:
             pass
         self.create_btn, self.create_btn_hl = self.push_btn(name="Create")
@@ -335,13 +341,11 @@ class Final_tool(QWidget):
 
 
 if __name__ == "__main__":
-    # print "this is final_light_setup main file"
+    # print "this i s final_light_setup main file"
     app = QApplication([])
-    mw = QMainWindow()
+    # mw = QMainWindow()
     wdg = Final_tool()
     wdg.show()
     sys.exit(app.exec_())
 else:
-    print "its inherited in light_tool_maya_command"
-
-
+    print("its inherited in light_tool_maya_command")
